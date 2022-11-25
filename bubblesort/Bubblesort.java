@@ -2,6 +2,10 @@ package bubblesort;
 import java.util.Scanner;
 public class Bubblesort {
 
+    /*
+     * 
+     * TODO: #1 redundanten code in der kennzahlen methode entfernen, da nur das min u. max verschieden sind.
+     */
     public static void main( String[] args) {
 
         Scanner scan = new Scanner(System.in);
