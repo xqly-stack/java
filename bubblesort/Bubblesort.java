@@ -22,6 +22,7 @@ public class Bubblesort {
         System.out.printf("\nIhre Wahl:\t");
         String sort = scan.next();
         System.out.println("-------------------");
+        scan.close();
         int[] erg = new int[4];
         int passes = (zahlen.length * zahlen.length)*zahlen.length;
         int j = 0;
@@ -165,5 +166,6 @@ public class Bubblesort {
 
         return sum;
     }
+
 
 }
