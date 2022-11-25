@@ -5,6 +5,8 @@ public class Bubblesort {
     /*
      * 
      * TODO: #1 redundanten code in der kennzahlen methode entfernen, da nur das min u. max verschieden sind.
+     * TODO: #2 aufsteigende funktion funktioniert nicht richtig
+     * 
      */
     public static void main( String[] args) {
 
@@ -118,55 +120,43 @@ public class Bubblesort {
     public static int[] kennzahlen(int[] arr, String path) {
 
         int[] sum = new int[4];
-        
+        int durchschnitt = 0;
+        int maximum = 0;
+        int minimum = 0;
+        int summe = 0;
+
         // Wenn ASC - aufsteigend - a
         if (path.equalsIgnoreCase("ASC")) {
             
-            int maximum = arr[(arr.length-1)];
-            int minimum = arr[0];
-
-            int durchschnitt = 0;
-            int summe = 0;
-            sum[0] = maximum;
-            sum[1] = minimum;
-
-            // Kennzahlen
-            for (int i = 0; i < arr.length; i++) {
-                
-                summe += arr[i];
-
-            }
-
-            durchschnitt = summe / arr.length;
-            sum[2] = summe;
-            sum[3] = durchschnitt;
+            
+            maximum = arr[(arr.length-1)];
+            minimum= arr[0];
+            
             
         }
-
+        
         // Wenn DESC - absteigend - b
         if (path.equalsIgnoreCase("DESC")) {
             
-            int maximum = arr[0];
-            int minimum = arr[(arr.length-1)];
-            sum[1] = maximum;
-            sum[2] = minimum;
-
-            int durchschnitt = 0;
-            int summe = 0;
-            sum[0] = maximum;
-            sum[1] = minimum;
-
-            // Kennzahlen
-            for (int i = 0; i < arr.length; i++) {
-                
-                summe += arr[i];
-
-            }
-
-            durchschnitt = summe / arr.length;
-            sum[2] = summe;
-            sum[3] = durchschnitt;
+            maximum = arr[0];
+            minimum = arr[(arr.length-1)];
+    
         }
+
+        // Kennzahlen
+        for (int i = 0; i < arr.length; i++) {
+            
+            summe += arr[i];
+
+        }
+
+        durchschnitt = summe / arr.length;
+        sum[0] = maximum;
+        sum[1] = minimum;
+        sum[2] = summe;
+        sum[3] = durchschnitt;
+
+
 
         return sum;
     }
