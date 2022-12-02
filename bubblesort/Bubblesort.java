@@ -36,22 +36,22 @@ public class Bubblesort {
         if (sort.equalsIgnoreCase("a")) {
                 
             for (int i = 0; i < zahlen.length; i++) {
+                
                 // Index out of bound error vermeiden!
                 if (i == (zahlen.length - 1)) {
                     j+=1;
-                    
+                    //System.out.println(j);
+                    i = 0;
                     if (j == passes) {
                         break;                        
                     }
 
-                    continue;
                 }
                 if (zahlen[(i+1)] < zahlen[i]) {
 
                     
                     int tmp1 = zahlen[i];
-                    int tmp2 = zahlen[(i+1)];
-                    zahlen[i] = tmp2;
+                    zahlen[i] = zahlen[(i+1)];
                     zahlen[(i+1)] = tmp1;
                 }
             }
@@ -69,12 +69,10 @@ public class Bubblesort {
                 // Index out of bound error vermeiden!
                 if (i == (zahlen.length - 1)) {
                     j+=1;
-                    
+                    i = 0; 
                     if (j == passes) {
                         break;                        
                     }
-
-                    continue;
 
                 }
                 if (zahlen[(i+1)] > zahlen[i]) {
@@ -84,16 +82,15 @@ public class Bubblesort {
                     int tmp2 = zahlen[(i+1)];
                     zahlen[i] = tmp2;
                     zahlen[(i+1)] = tmp1;
-                    
                 }
             }
-            arrAusgabe(zahlen);
+            arrAusgabe(zahlen); // Falsche Ausgabe
             erg = kennzahlen(zahlen, "DESC");
 
         }
 
         // Ergebnisse
-        System.out.println("\n----------------------------------------------");
+        System.out.println("\n----------------------------------------------"); 
         System.out.printf("\nMaximum:%s\nMinimum:%s\nSumme:%s\nDurchschnitt:%s\n", erg[0], erg[1], erg[2], erg[3]);
 
 
@@ -106,7 +103,7 @@ public class Bubblesort {
         int deli = 0;
         for (int i = 0; i < arr.length; i++) {
             deli+=1;
-            System.out.printf("Stelle:%s | Zahl:%s  ", (i+1), arr[i]);
+            System.out.printf("Zahl:%s ", arr[i]);
             if (deli == 4) {
                 System.out.printf("\n");
                 deli = 0;
