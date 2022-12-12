@@ -3,6 +3,8 @@ package currency_calc;
 import java.io.IOException;
 import java.util.Scanner;
 
+import javax.print.event.PrintEvent;
+
 @SuppressWarnings({"unused"})
 public class Test {
 
@@ -18,11 +20,19 @@ public class Test {
             currencyCONV = scan.next();
         } while (!(currencyCONV.equalsIgnoreCase("USD") | currencyCONV.equalsIgnoreCase("gbp")));
 
-        CurrencyCalcAPI apiInstance = (CurrencyCalcAPI) new CurrencyCalcAPI(url, currencyCONV);
-        String respBody = apiInstance.getResponseBody();
+        CurrencyCalcAPI apiInstance = (CurrencyCalcAPI) new CurrencyCalcAPI(url, currencyCONV, "currency_calc/output/data.xml");
+        //String respBody = apiInstance.getResponseBody();
 
-        apiInstance.createJSONFile("output.json");
-        System.out.println(respBody); 
+        //apiInstance.createJSONFile("/output/output.json");
+        //System.out.println(respBody); 
+        String xml_data = apiInstance.getResults();
+        System.out.println(xml_data);
+    }
 
+    public String XMLParser(String xml_data, String currency) {
+
+        
+
+        return xml_data;
     }
 }
