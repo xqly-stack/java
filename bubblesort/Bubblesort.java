@@ -1,5 +1,6 @@
 package bubblesort;
 import java.util.Scanner;
+
 public class Bubblesort {
 
     public static void main( String[] args) {
@@ -37,6 +38,7 @@ public class Bubblesort {
                     //System.out.println(j);
                     i = 0;
                     if (j == passes) {
+                        output(j, zahlen);
                         break;                        
                     }
 
@@ -65,6 +67,7 @@ public class Bubblesort {
                     j+=1;
                     i = 0; 
                     if (j == passes) {
+                        output(j, zahlen);
                         break;                        
                     }
 
@@ -150,6 +153,15 @@ public class Bubblesort {
 
 
         return sum;
+    }
+
+    public static void output(int num, int[] arr) {
+
+        // num ist j
+        // Formel: schdurchg = j bzw. passes * (array.länge - 1)
+        // schdurch = passes * (schleifendurchläufe innerhalb der schleife also i)
+        // z.B.: schdurch = 125 oder 5³ * (10 - 1) {Array Länge - 1} = 1.125 schleifendurchläufe
+        System.out.println("Schleifendurchläufe: " + (num*(arr.length-1)) + "\nSyntax: " + arr.length + "^3 * " + ((arr.length-1)) + "\n");
     }
 
 
