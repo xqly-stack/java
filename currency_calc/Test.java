@@ -2,7 +2,6 @@ package currency_calc;
 
 import java.io.IOException;
 import java.util.Scanner;
-import org.w3c.dom.Document;
 
 @SuppressWarnings({"unused"})
 public class Test {
