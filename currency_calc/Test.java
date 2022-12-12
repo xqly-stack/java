@@ -23,7 +23,7 @@ public class Test {
         String respBody = apiInstance.getResponseBody();
 
         apiInstance.createJSONFile("output.json");
-        
+        System.out.println(respBody); 
 
     }
 }
