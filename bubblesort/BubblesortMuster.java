@@ -85,7 +85,7 @@ public class BubblesortMuster {
       } // end of for    
     } // end of for
    
-    System.out.println("\nSchleifendurchgänge: "+ sum);
+    Output.output(sum);
     // Gibt das Array auf der Konsole aus
     for (int i=0;i<zahlen.length ;i++ ) {
       System.out.print(zahlen[i] + "\t");
