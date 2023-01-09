@@ -27,18 +27,19 @@ public class Bubblesort {
         int[] erg = new int[4];
         int passes = (zahlen.length * zahlen.length)*zahlen.length;
         int j = 0;
+        int sum = 0;
         // Aufsteigend - a (ASC)
         if (sort.equalsIgnoreCase("a")) {
                 
             for (int i = 0; i < zahlen.length; i++) {
-                
+                sum+=1;
                 // Index out of bound error vermeiden!
                 if (i == (zahlen.length - 1)) {
                     j+=1;
                     //System.out.println(j);
                     i = 0;
                     if (j == passes) {
-                        output(j, zahlen);
+                        Output.output(sum);
                         break;                        
                     }
 
@@ -62,12 +63,13 @@ public class Bubblesort {
             
             
             for (int i = 0; i < zahlen.length; i++) {
+                sum+=1;
                 // Index out of bound error vermeiden!
                 if (i == (zahlen.length - 1)) {
                     j+=1;
                     i = 0; 
                     if (j == passes) {
-                        output(j, zahlen);
+                        Output.output(sum);
                         break;                        
                     }
 
@@ -154,15 +156,5 @@ public class Bubblesort {
 
         return sum;
     }
-
-    public static void output(int num, int[] arr) {
-
-        // num ist j
-        // Formel: schdurchg = j bzw. passes * (array.länge - 1)
-        // schdurch = passes * (schleifendurchläufe innerhalb der schleife also i)
-        // z.B.: schdurch = 125 oder 5³ * (10 - 1) {Array Länge - 1} = 1.125 schleifendurchläufe
-        System.out.println("Schleifendurchläufe: " + (num*(arr.length-1)) + "\nSyntax: " + arr.length + "^3 * " + ((arr.length-1)) + "\n");
-    }
-
 
 }
